@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements-ci.txt
 
       - name: Unit tests
-        run: pytest -q
+        run: python -m pytest -q
 
       - name: Smoke test the full pipeline on synthetic data
         run: python run.py --synthetic
