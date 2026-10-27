@@ -138,7 +138,7 @@ notebooks/                 walk-through notebook
 tests/test_core.py         mass balance, calibration, no-leakage, units, battery energy balance
 .github/workflows/ci.yml   tests and a synthetic-data smoke run on every push
 ```
-
+  **Live dashboard:** https://lake-tana-storage.streamlit.app/
 ## Data
 
 NASA Prediction Of Worldwide Energy Resources (POWER), monthly and daily point API, parameters `PRECTOTCORR`, `ALLSKY_SFC_SW_DWN`, `WS50M`. Please cite NASA POWER when you publish.
