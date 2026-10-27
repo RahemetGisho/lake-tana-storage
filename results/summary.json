@@ -1,0 +1,202 @@
+{
+  "synthetic_test_data": false,
+  "config": {
+    "lat": 11.85,
+    "lon": 37.45,
+    "start_year": 1990,
+    "end_year": 2025,
+    "test_start": "2016-01",
+    "horizon": 3,
+    "runoff_weights": [
+      0.35,
+      0.4,
+      0.25
+    ],
+    "mean_annual_inflow_mm3": 3800.0,
+    "cap_months": 6.0,
+    "dead_frac": 0.1,
+    "demand_frac": 0.8,
+    "rmax_mult": 1.5,
+    "init_frac": 0.5,
+    "gwh_per_mm3": 0.245,
+    "pv_perf_ratio": 0.78,
+    "wind_shear": 0.14,
+    "hub_height_m": 100.0,
+    "wind_losses": 0.85,
+    "cut_in": 3.0,
+    "rated": 12.0,
+    "cut_out": 25.0,
+    "weak_season_quantile": 0.25
+  },
+  "n_months": 432,
+  "test_months": 120,
+  "forecast_rmse_1mo_mm": {
+    "seasonal_naive": 82.4308239980652,
+    "climatology": 65.95338243684498,
+    "sarima": 65.62144526816157,
+    "gbm": 71.37867251116562
+  },
+  "forecast_skill_vs_climatology_1mo": {
+    "seasonal_naive": -0.24983467037492013,
+    "climatology": 0.0,
+    "sarima": 0.005032905916558028,
+    "gbm": -0.08225946682136787
+  },
+  "reservoir_rules": {
+    "No forecast": {
+      "shortfall_months": 7.0,
+      "unmet_mm3": 703.3582604828,
+      "unmet_gwh": 172.3227738183,
+      "spill_mm3": 4908.316233183,
+      "spill_months": 18.0,
+      "generation_gwh": 7275.6772261817,
+      "mass_balance_error": -0.0
+    },
+    "Climatology": {
+      "shortfall_months": 8.0,
+      "unmet_mm3": 866.9890824405,
+      "unmet_gwh": 212.4123251979,
+      "spill_mm3": 1841.4926281057,
+      "spill_months": 8.0,
+      "generation_gwh": 8027.0490094257,
+      "mass_balance_error": 0.0
+    },
+    "SARIMA forecast": {
+      "shortfall_months": 8.0,
+      "unmet_mm3": 800.5767554959,
+      "unmet_gwh": 196.1413050965,
+      "spill_mm3": 1944.6095345091,
+      "spill_months": 10.0,
+      "generation_gwh": 8001.7853673568,
+      "mass_balance_error": -0.0
+    },
+    "Boosting forecast": {
+      "shortfall_months": 8.0,
+      "unmet_mm3": 788.1064044073,
+      "unmet_gwh": 193.0860690798,
+      "spill_mm3": 1972.8873073001,
+      "spill_months": 9.0,
+      "generation_gwh": 7994.857313023,
+      "mass_balance_error": 0.0
+    },
+    "Perfect foresight": {
+      "shortfall_months": 7.0,
+      "unmet_mm3": 703.3582604828,
+      "unmet_gwh": 172.3227738183,
+      "spill_mm3": 1465.959907287,
+      "spill_months": 8.0,
+      "generation_gwh": 8119.0545260262,
+      "mass_balance_error": -0.0
+    }
+  },
+  "spill_change_vs_no_forecast_pct": {
+    "No forecast": 0.0,
+    "Climatology": -62.48219265791889,
+    "SARIMA forecast": -60.381331558009535,
+    "Boosting forecast": -59.80521193882629,
+    "Perfect foresight": -70.13314062007031
+  },
+  "best_forecast_rule_by_spill": "SARIMA forecast",
+  "gap_cover_100mw_mix": 0.3602509177438577,
+  "gap_cover_200mw_mix": 0.6415310864275074,
+  "hydro_shortfall_months_long_run": 21,
+  "complementarity": {
+    "corr_rain_solar": -0.28092992023807173,
+    "corr_rain_wind": -0.13129717930259718,
+    "corr_seasonal_inflow_solar": -0.7692209456185347,
+    "corr_seasonal_inflow_wind": -0.6006330794878408
+  },
+  "weak_rainy_season_years": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2011,
+    2017,
+    2018,
+    2019
+  ],
+  "battery": {
+    "policies": {
+      "Solar only": {
+        "peak_hydro_mwh": 91601.6686956988,
+        "overnight_grid_mwh": 0.0,
+        "weighted_cost": 183203.3373913976,
+        "curtailed_pv_mwh": 133214.3021422588,
+        "peak_covered_pct": 63.7643480792,
+        "saving_vs_best_static_pct": 0.0
+      },
+      "Always top up": {
+        "peak_hydro_mwh": 84756.3167572085,
+        "overnight_grid_mwh": 198532.6086956521,
+        "weighted_cost": 368045.2422100691,
+        "curtailed_pv_mwh": 323659.3022149309,
+        "peak_covered_pct": 66.4722222222,
+        "saving_vs_best_static_pct": -100.8943982411
+      },
+      "Top up Jun-Sep": {
+        "peak_hydro_mwh": 85975.2061135997,
+        "overnight_grid_mwh": 66304.3478260869,
+        "weighted_cost": 238254.7600532863,
+        "curtailed_pv_mwh": 192871.1280140699,
+        "peak_covered_pct": 65.9900557827,
+        "saving_vs_best_static_pct": -30.0493557845
+      },
+      "Forecast: climatology": {
+        "peak_hydro_mwh": 91601.6686956988,
+        "overnight_grid_mwh": 0.0,
+        "weighted_cost": 183203.3373913976,
+        "curtailed_pv_mwh": 133214.3021422588,
+        "peak_covered_pct": 63.7643480792,
+        "saving_vs_best_static_pct": 0.0
+      },
+      "Forecast: persistence": {
+        "peak_hydro_mwh": 89096.5765447259,
+        "overnight_grid_mwh": 8088.262806768,
+        "weighted_cost": 186281.4158962198,
+        "curtailed_pv_mwh": 138342.8625022252,
+        "peak_covered_pct": 64.755308708,
+        "saving_vs_best_static_pct": -1.6801432488
+      },
+      "Forecast: AR(1)": {
+        "peak_hydro_mwh": 90479.494073282,
+        "overnight_grid_mwh": 2373.4581988791,
+        "weighted_cost": 183332.4463454431,
+        "curtailed_pv_mwh": 134261.9396624791,
+        "peak_covered_pct": 64.208256248,
+        "saving_vs_best_static_pct": -0.0704730361
+      },
+      "Perfect foresight": {
+        "peak_hydro_mwh": 84756.3167572085,
+        "overnight_grid_mwh": 8088.262806768,
+        "weighted_cost": 177600.896321185,
+        "curtailed_pv_mwh": 133214.9563260468,
+        "peak_covered_pct": 66.4722222222,
+        "saving_vs_best_static_pct": 3.0580453118
+      }
+    },
+    "daily_solar_forecast_skill": {
+      "clim": {
+        "rmse": 0.820233596,
+        "mae": 0.6132832474,
+        "bias": 0.0565046413,
+        "skill_vs_clim": 0.0
+      },
+      "persistence": {
+        "rmse": 0.807273011,
+        "mae": 0.5575365727,
+        "bias": 8.09472e-05,
+        "skill_vs_clim": 0.0158010901
+      },
+      "ar1": {
+        "rmse": 0.7042768327,
+        "mae": 0.5091768963,
+        "bias": 0.0292997082,
+        "skill_vs_clim": 0.1413704143
+      }
+    },
+    "ar1_phi": 0.4821544132323683,
+    "synthetic_load_and_hourly_pv_shape": true
+  }
+}

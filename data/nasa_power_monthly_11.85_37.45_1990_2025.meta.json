@@ -1,0 +1,13 @@
+{
+  "source": "NASA POWER monthly point API",
+  "query": {
+    "parameters": "PRECTOTCORR,ALLSKY_SFC_SW_DWN,WS50M",
+    "community": "RE",
+    "longitude": 37.45,
+    "latitude": 11.85,
+    "start": 1990,
+    "end": 2025,
+    "format": "JSON"
+  },
+  "fetched_utc": "2026-10-25T08:45:48.509089+00:00"
+}
