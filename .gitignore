@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual environments and editors
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Fake data from offline smoke tests: never commit
+results_synthetic/
+data/dashboard_synthetic/
+
+# OS
+.DS_Store
+Thumbs.db
